@@ -1,0 +1,65 @@
+@page
+@model AFKWebApp.Pages.Heroes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Hero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Hero.ID" />
+            <div class="form-group">
+                <label asp-for="Hero.Name" class="control-label"></label>
+                <input asp-for="Hero.Name" class="form-control" />
+                <span asp-validation-for="Hero.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hero.Title" class="control-label"></label>
+                <input asp-for="Hero.Title" class="form-control" />
+                <span asp-validation-for="Hero.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hero.Faction" class="control-label"></label>
+                <input asp-for="Hero.Faction" class="form-control" />
+                <span asp-validation-for="Hero.Faction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hero.Class" class="control-label"></label>
+                <input asp-for="Hero.Class" class="form-control" />
+                <span asp-validation-for="Hero.Class" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hero.Rarity" class="control-label"></label>
+                <input asp-for="Hero.Rarity" class="form-control" />
+                <span asp-validation-for="Hero.Rarity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hero.Range" class="control-label"></label>
+                <input asp-for="Hero.Range" class="form-control" />
+                <span asp-validation-for="Hero.Range" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hero.ReleaseDate" class="control-label"></label>
+                <input asp-for="Hero.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Hero.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
